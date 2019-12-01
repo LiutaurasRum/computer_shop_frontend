@@ -1,3 +1,5 @@
+import com.google.gson.Gson;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
@@ -12,8 +14,22 @@ public class FXMLController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        String javaVersion = System.getProperty("java.version");
-        String javafxVersion = System.getProperty("javafx.version");
-        label.setText("Hello, JavaFX " + javafxVersion + "\nRunning on Java " + javaVersion + ".");
-    }    
+    }
+
+    public void printToConsoleClick(ActionEvent actionEvent) {
+        printToConsole();
+    }
+
+    private void printToConsole() {
+        HttpClient httpClient = new HttpClient(MainApp.ADDRESS, MainApp.PORT);
+        Info[] info = new Gson().fromJson(httpClient.get(MainApp.API_INFO), Info[].class);
+        for (Info value : info) {
+            System.out.println("name: " + value.getName() + " model: " + value.getModel() + " count: " + Integer.valueOf(value.getCount()));
+        }
+    }
+
+    @FXML
+    public void printToConsoleClick() {
+        printToConsole();
+    }
 }
