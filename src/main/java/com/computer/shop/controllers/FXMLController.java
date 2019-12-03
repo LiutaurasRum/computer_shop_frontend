@@ -1,3 +1,8 @@
+package com.computer.shop.controllers;
+
+import com.computer.shop.MainApp;
+import com.computer.shop.http.HttpClient;
+import com.computer.shop.models.Info;
 import com.google.gson.Gson;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,10 +19,6 @@ public class FXMLController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-    }
-
-    public void printToConsoleClick(ActionEvent actionEvent) {
-        printToConsole();
     }
 
     private void printToConsole() {

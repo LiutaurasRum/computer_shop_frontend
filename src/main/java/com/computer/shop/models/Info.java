@@ -1,3 +1,5 @@
+package com.computer.shop.models;
+
 public class Info {
     private String name;
     private String model;

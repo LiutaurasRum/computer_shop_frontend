@@ -1,3 +1,5 @@
+package com.computer.shop.http;
+
 import sun.net.www.protocol.http.HttpURLConnection;
 
 import java.io.BufferedReader;
