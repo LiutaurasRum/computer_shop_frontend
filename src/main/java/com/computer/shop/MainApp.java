@@ -18,9 +18,9 @@ public class MainApp extends Application {
 
     @Override
     public void start(Stage stage) throws Exception {
-        Parent root = FXMLLoader.load(getClass().getResource("/scene.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/login/login.fxml"));
         Scene scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("/styles.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("/login/loginStyles.css").toExternalForm());
         stage.setTitle("JavaFX and Gradle");
         stage.setScene(scene);
         stage.show();
