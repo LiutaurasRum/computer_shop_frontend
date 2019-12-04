@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="menus.Ordermenu">
+   <children>
+      <Label layoutX="266.0" layoutY="33.0" text="Ordering tab" />
+      <Label layoutX="189.0" layoutY="136.0" text="Name" />
+      <Label layoutX="189.0" layoutY="182.0" text="Count" />
+      <Label layoutX="189.0" layoutY="222.0" text="Type" />
+      <Label layoutX="189.0" layoutY="262.0" text="Model" />
+      <TextField layoutX="261.0" layoutY="132.0" />
+      <TextField layoutX="261.0" layoutY="178.0" />
+      <TextField layoutX="261.0" layoutY="218.0" />
+      <TextField layoutX="261.0" layoutY="258.0" />
+      <Label layoutX="223.0" layoutY="69.0" prefHeight="50.0" prefWidth="170.0" text="*Please enter the information of the item to order it" wrapText="true" />
+      <Button layoutX="282.0" layoutY="318.0" mnemonicParsing="false" text="Order now!" />
+      <Button layoutX="241.0" layoutY="353.0" mnemonicParsing="false" text="Go back to the main menu" />
+   </children>
+</AnchorPane>
