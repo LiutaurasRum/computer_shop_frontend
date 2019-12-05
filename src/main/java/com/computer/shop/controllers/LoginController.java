@@ -24,8 +24,6 @@ import java.util.ResourceBundle;
 public class LoginController implements Initializable {
     private static final String LOGIN_ENDPOINT = "login";
     @FXML
-    private Label label;
-    @FXML
     private TextField loginTextField;
     @FXML
     private TextField passwordTextField;
@@ -43,7 +41,7 @@ public class LoginController implements Initializable {
                 ViewHelper.loadView(this,"/menu/menu.fxml", "/menu/menuStyles.css");
                 ViewHelper.killCurrentView(event);
             } else {
-                showAlert("Credential are incorrect!");
+                showAlert("Credentials are incorrect!");
             }
         } else {
             showAlert("One of credentials fields are empty.");
@@ -52,7 +50,7 @@ public class LoginController implements Initializable {
 
     private boolean requestLogin(final String login, final String password) {
         HttpRequests httpRequests = new HttpRequests(MainApp.ADDRESS, MainApp.PORT);
-        String credentialsJson = new Gson().toJson(new User(login, password));
+        String credentialsJson = new Gson().toJson(new User(login, password, null));
         return Boolean.parseBoolean(httpRequests.post(LOGIN_ENDPOINT, credentialsJson));
     }
 

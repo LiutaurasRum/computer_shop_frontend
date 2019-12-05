@@ -3,10 +3,12 @@ package com.computer.shop.models;
 public class User {
     private final String login;
     private final String password;
+    private final String email;
 
-    public User(String login, String password) {
+    public User(String login, String password, String email) {
         this.login = login;
         this.password = password;
+        this.email = email;
     }
 
     public String getLogin() {
@@ -15,5 +17,9 @@ public class User {
 
     public String getPassword() {
         return password;
+    }
+
+    public String getEmail() {
+        return email;
     }
 }

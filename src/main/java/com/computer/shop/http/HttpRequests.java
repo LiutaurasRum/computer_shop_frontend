@@ -11,9 +11,6 @@ import org.apache.http.util.EntityUtils;
 import java.io.IOException;
 
 public class HttpRequests {
-    private static final String POST = "POST";
-    private static final String GET = "GET";
-    private static final String ACCEPT = "Accept";
     private static final String APPLICATION_JSON = "application/json";
     private static final String CONTENT_TYPE = "Content-type";
 
@@ -22,29 +19,6 @@ public class HttpRequests {
     public HttpRequests(final String address, final String port) {
         baseAddress = buildBaseAddress(address, port);
     }
-
-
-//    public String get(final String address) {
-//        String response = null;
-//        try {
-//            URL url = new URL( baseAddress + address);
-//            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-//            conn.setRequestMethod(GET);
-//            conn.setRequestProperty(ACCEPT, APPLICATION_JSON);
-//            if (conn.getResponseCode() != 200) {
-//                throw new RuntimeException(FAILED + conn.getResponseCode());
-//            }
-//
-//            BufferedReader br = new BufferedReader(new InputStreamReader(
-//                    (conn.getInputStream())));
-//            response = br.readLine();
-//            conn.disconnect();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//
-//        return response;
-//    }
 
     public String post(final String address, final String body) {
         String response;
