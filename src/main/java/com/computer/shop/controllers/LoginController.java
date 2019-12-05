@@ -1,10 +1,12 @@
 package com.computer.shop.controllers;
 
 import com.computer.shop.MainApp;
+import com.computer.shop.helpers.ViewHelper;
 import com.computer.shop.http.HttpRequests;
 import com.computer.shop.models.User;
 import com.google.gson.Gson;
 import javafx.event.ActionEvent;
+import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -33,14 +35,13 @@ public class LoginController implements Initializable {
     }
 
     @FXML
-    public void login(ActionEvent event) {
+    public void login(final ActionEvent event) {
         final String login = loginTextField.getText();
         final String password = passwordTextField.getText();
-
         if (!login.isEmpty() && !password.isEmpty()) {
             if (requestLogin(login, password)) {
-                loadMenuView();
-                ((Stage) ((Node) event.getSource()).getScene().getWindow()).close();
+                ViewHelper.loadView(this,"/menu/menu.fxml", "/menu/menuStyles.css");
+                ViewHelper.killCurrentView(event);
             } else {
                 showAlert("Credential are incorrect!");
             }
@@ -49,24 +50,15 @@ public class LoginController implements Initializable {
         }
     }
 
-    private void loadMenuView() {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/menu/menu.fxml"));
-            Parent root = fxmlLoader.load();
-            Stage stage = new Stage();
-            Scene scene = new Scene(root);
-            scene.getStylesheets().add(getClass().getResource("/menu/menuStyles.css").toExternalForm());
-            stage.setScene(scene);
-            stage.show();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
     private boolean requestLogin(final String login, final String password) {
         HttpRequests httpRequests = new HttpRequests(MainApp.ADDRESS, MainApp.PORT);
         String credentialsJson = new Gson().toJson(new User(login, password));
         return Boolean.parseBoolean(httpRequests.post(LOGIN_ENDPOINT, credentialsJson));
+    }
+
+    public void openRegisterView(final Event event) {
+        ViewHelper.loadView(this,"/register/register.fxml", "/register/registerStyles.css");
+        ViewHelper.killCurrentView(event);
     }
 
     private void showAlert(final String text) {

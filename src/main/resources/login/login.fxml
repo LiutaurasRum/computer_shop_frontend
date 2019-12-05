@@ -12,7 +12,7 @@
             <TextField layoutX="226.0" layoutY="218.0" fx:id="passwordTextField"/>
             <Label layoutX="150.0" layoutY="181.0" prefHeight="25.0" prefWidth="53.0" text="Login ID" />
             <Label layoutX="143.0" layoutY="218.0" prefHeight="25.0" prefWidth="60.0" text="Password" />
-            <Button layoutX="482.0" layoutY="29.0" mnemonicParsing="false" text="Register here!"/>
+            <Button layoutX="482.0" layoutY="29.0" mnemonicParsing="false" text="Register here!" onAction="#openRegisterView"/>
             <Button layoutX="263.0" layoutY="260.0" mnemonicParsing="false" text="Login now!" onAction="#login"/>
          </children></Pane>
    </children>

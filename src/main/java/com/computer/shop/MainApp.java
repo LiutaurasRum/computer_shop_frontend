@@ -10,7 +10,6 @@ import javafx.stage.Stage;
 public class MainApp extends Application {
     public static final String ADDRESS = "localhost";
     public static final String PORT = "8080";
-    public static final String API_INFO = "api/info";
 
     public static void main(String[] args) {
         launch(args);
@@ -21,7 +20,7 @@ public class MainApp extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("/login/login.fxml"));
         Scene scene = new Scene(root);
         scene.getStylesheets().add(getClass().getResource("/login/loginStyles.css").toExternalForm());
-        stage.setTitle("JavaFX and Gradle");
+        stage.setTitle("Computer Shop");
         stage.setScene(scene);
         stage.show();
     }
