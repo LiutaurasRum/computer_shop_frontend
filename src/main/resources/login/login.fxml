@@ -3,18 +3,17 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.computer.shop.controllers.FXMLController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.computer.shop.controllers.LoginController">
    <children>
       <Pane prefHeight="200.0" prefWidth="200.0">
          <children>
-            <Button fx:id="buttonPrintToConsole" layoutX="251.0" layoutY="338.0" onAction="#printToConsoleClick" text="Print to console" />
             <Label layoutX="230.0" layoutY="95.0" prefHeight="47.0" prefWidth="141.0" text="Login into computer shop!" />
-            <TextField layoutX="226.0" layoutY="181.0" />
-            <TextField layoutX="226.0" layoutY="218.0" />
+            <TextField layoutX="226.0" layoutY="181.0" fx:id="loginTextField"/>
+            <TextField layoutX="226.0" layoutY="218.0" fx:id="passwordTextField"/>
             <Label layoutX="150.0" layoutY="181.0" prefHeight="25.0" prefWidth="53.0" text="Login ID" />
             <Label layoutX="143.0" layoutY="218.0" prefHeight="25.0" prefWidth="60.0" text="Password" />
-            <Button layoutX="482.0" layoutY="29.0" mnemonicParsing="false" text="Register here!" />
-            <Button layoutX="263.0" layoutY="260.0" mnemonicParsing="false" text="Login now!" />
+            <Button layoutX="482.0" layoutY="29.0" mnemonicParsing="false" text="Register here!"/>
+            <Button layoutX="263.0" layoutY="260.0" mnemonicParsing="false" text="Login now!" onAction="#login"/>
          </children></Pane>
    </children>
 </StackPane>

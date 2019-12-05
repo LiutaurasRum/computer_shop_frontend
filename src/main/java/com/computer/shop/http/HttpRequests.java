@@ -1,5 +1,6 @@
 package com.computer.shop.http;
 
+import javafx.scene.control.Alert;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
@@ -57,6 +58,7 @@ public class HttpRequests {
             httpPost.setEntity(stringEntity);
             response = getResponse(httpClient.execute(httpPost));
         } catch (Exception e) {
+            handleConnectionError();
             throw new RuntimeException(e);
         }
 
@@ -82,5 +84,13 @@ public class HttpRequests {
         }
 
         return result;
+    }
+
+    private void handleConnectionError() {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Timed out");
+        alert.setContentText("Error making request to server!");
+        alert.setHeaderText(null);
+        alert.showAndWait();
     }
 }
