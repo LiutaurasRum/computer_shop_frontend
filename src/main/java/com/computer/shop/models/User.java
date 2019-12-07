@@ -1,11 +1,13 @@
 package com.computer.shop.models;
 
+import com.computer.shop.annotations.Email;
 import com.computer.shop.annotations.Password;
 
 public class User {
     private final String login;
     @Password
     private final String password;
+    @Email
     private final String email;
 
     public User(String login, String password, String email) {

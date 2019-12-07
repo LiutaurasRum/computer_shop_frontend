@@ -50,27 +50,10 @@ public class RegisterController implements Initializable {
                 } else {
                     showAlert("User already exists!");
                 }
-            } else {
-                showAlert("Password do not match!");
             }
         } else {
             showAlert(validationResult.iterator().next().getMessage());
         }
-    }
-
-    private boolean validateFields() {
-        final String emailText = emailInput.getText();
-        if(!loginInput.getText().isEmpty() && !emailText.isEmpty() && !passwordInput.getText().isEmpty() && !passwordInput2.getText().isEmpty()) {
-            if (emailText.contains("@" ) && emailText.contains(".")) {
-                return true;
-            } else {
-                showAlert("Not correct Email!");
-            }
-        } else {
-            showAlert("Please fill all input fields!");
-        }
-
-        return false;
     }
 
     private Set<ConstraintViolation<User>> getValidityResult(final User user) {
