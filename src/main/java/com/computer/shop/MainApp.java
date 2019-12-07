@@ -19,7 +19,7 @@ public class MainApp extends Application {
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(getClass().getResource("/login/login.fxml"));
         Scene scene = new Scene(root);
-        scene.getStylesheets().add(getClass().getResource("/login/loginStyles.css").toExternalForm());
+        scene.getStylesheets().add(getClass().getResource("/login/login.css").toExternalForm());
         stage.setTitle("Computer Shop");
         stage.setScene(scene);
         stage.show();

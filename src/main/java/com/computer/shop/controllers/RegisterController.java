@@ -34,7 +34,7 @@ public class RegisterController implements Initializable {
     }
 
     public void backToMenu(final Event event) {
-        ViewHelper.loadView(this, "/login/login.fxml", "/login/loginStyles.css");
+        ViewHelper.loadView(this, "/login/login.fxml", "/login/login.css");
         ViewHelper.killCurrentView(event);
     }
 

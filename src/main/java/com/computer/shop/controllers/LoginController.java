@@ -8,15 +8,9 @@ import com.google.gson.Gson;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -38,7 +32,7 @@ public class LoginController implements Initializable {
         final String password = passwordTextField.getText();
         if (!login.isEmpty() && !password.isEmpty()) {
             if (requestLogin(login, password)) {
-                ViewHelper.loadView(this,"/menu/menu.fxml", "/menu/menuStyles.css");
+                ViewHelper.loadView(this,"/menu/menu.fxml", "/menu/menu.css");
                 ViewHelper.killCurrentView(event);
             } else {
                 showAlert("Credentials are incorrect!");
@@ -55,7 +49,7 @@ public class LoginController implements Initializable {
     }
 
     public void openRegisterView(final Event event) {
-        ViewHelper.loadView(this,"/register/register.fxml", "/register/registerStyles.css");
+        ViewHelper.loadView(this,"/register/register.fxml", "/register/register.css");
         ViewHelper.killCurrentView(event);
     }
 
