@@ -1,7 +1,10 @@
 package com.computer.shop.models;
 
+import com.computer.shop.annotations.Password;
+
 public class User {
     private final String login;
+    @Password
     private final String password;
     private final String email;
 

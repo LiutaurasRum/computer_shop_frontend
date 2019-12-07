@@ -11,8 +11,13 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 
+import javax.validation.ConstraintViolation;
+import javax.validation.Validation;
+import javax.validation.Validator;
+import javax.validation.ValidatorFactory;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.Set;
 
 public class RegisterController implements Initializable {
     private static final String REGISTER_ENDPOINT = "register";
@@ -34,10 +39,12 @@ public class RegisterController implements Initializable {
     }
 
     public void register() {
-        if (validateFields()) {
+        User user = new User(loginInput.getText(), passwordInput.getText(), emailInput.getText());
+        final Set<ConstraintViolation<User>> validationResult = getValidityResult(user);
+        if (validationResult.isEmpty()) {
             if(passwordInput.getText().equals(passwordInput2.getText())) {
                 HttpRequests httpRequests = new HttpRequests(MainApp.ADDRESS, MainApp.PORT);
-                User user = new User(loginInput.getText(), passwordInput.getText(), emailInput.getText());
+
                 if (Boolean.parseBoolean(httpRequests.post(REGISTER_ENDPOINT, new Gson().toJson(user)))) {
                     showAlert("New user registered!");
                 } else {
@@ -46,6 +53,8 @@ public class RegisterController implements Initializable {
             } else {
                 showAlert("Password do not match!");
             }
+        } else {
+            showAlert(validationResult.iterator().next().getMessage());
         }
     }
 
@@ -62,6 +71,12 @@ public class RegisterController implements Initializable {
         }
 
         return false;
+    }
+
+    private Set<ConstraintViolation<User>> getValidityResult(final User user) {
+        ValidatorFactory validatorFactory = Validation.buildDefaultValidatorFactory();
+        Validator validator = validatorFactory.getValidator();
+         return validator.validate(user);
     }
 
     private void showAlert(final String text) {
