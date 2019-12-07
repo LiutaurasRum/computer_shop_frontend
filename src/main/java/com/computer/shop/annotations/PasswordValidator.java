@@ -4,7 +4,12 @@ import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
 public class PasswordValidator implements ConstraintValidator<Password, String> {
-    private static final boolean NUMBER_REQUIRED = true;
+    private boolean numberRequired;
+
+    @Override
+    public void initialize(Password constraintAnnotation) {
+        numberRequired = constraintAnnotation.numberRequired();
+    }
 
     @Override
     public boolean isValid(final String password, final ConstraintValidatorContext context) {
@@ -25,7 +30,7 @@ public class PasswordValidator implements ConstraintValidator<Password, String> 
                 return false;
             }
         }
-        return (numberRequired == NUMBER_REQUIRED);
+        return (this.numberRequired == numberRequired);
     }
 
     private boolean isProperLength(final String password) {

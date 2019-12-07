@@ -5,7 +5,7 @@ import com.computer.shop.annotations.Password;
 
 public class User {
     private final String login;
-    @Password
+    @Password(numberRequired = false)
     private final String password;
     @Email
     private final String email;

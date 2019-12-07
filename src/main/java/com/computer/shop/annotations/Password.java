@@ -15,5 +15,7 @@ public @interface Password {
 
     String message() default "the password must be 10 character long and must include the 1 numeric digit.";
 
+    boolean numberRequired() default true;
+
     Class<? extends Payload>[] payload() default {};
 }

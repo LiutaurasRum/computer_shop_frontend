@@ -7,6 +7,7 @@ import java.util.Calendar;
 public class EmailValidator implements ConstraintValidator<Email, String> {
     @Override
     public boolean isValid(final String password, final ConstraintValidatorContext context) {
+
         return validate(password);
     }
 
