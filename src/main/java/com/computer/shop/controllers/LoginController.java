@@ -17,6 +17,7 @@ import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
     private static final String LOGIN_ENDPOINT = "login";
+    public static final Boolean DEBUG_MODE = true;
     @FXML
     private TextField loginTextField;
     @FXML
@@ -28,6 +29,12 @@ public class LoginController implements Initializable {
 
     @FXML
     public void login(final ActionEvent event) {
+        if(DEBUG_MODE) {
+            ViewHelper.loadView(this,"/menu/menu.fxml", "/menu/menu.css");
+            ViewHelper.killCurrentView(event);
+            return;
+        }
+
         final String login = loginTextField.getText();
         final String password = passwordTextField.getText();
         if (!login.isEmpty() && !password.isEmpty()) {

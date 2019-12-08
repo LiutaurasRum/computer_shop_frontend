@@ -3,6 +3,7 @@ package com.computer.shop.http;
 import javafx.scene.control.Alert;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClientBuilder;
@@ -18,6 +19,23 @@ public class HttpRequests {
 
     public HttpRequests(final String address, final String port) {
         baseAddress = buildBaseAddress(address, port);
+    }
+
+    public String get(final String address) {
+        String response;
+
+        HttpClient httpClient = HttpClientBuilder.create().build();
+        HttpGet httpGet = new HttpGet(baseAddress + address);
+        httpGet.setHeader(CONTENT_TYPE, APPLICATION_JSON);
+        try {
+            httpGet.getRequestLine();
+            response = getResponse(httpClient.execute(httpGet));
+        } catch (Exception e) {
+            handleConnectionError();
+            throw new RuntimeException(e);
+        }
+
+        return response;
     }
 
     public String post(final String address, final String body) {

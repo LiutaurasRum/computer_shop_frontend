@@ -10,13 +10,12 @@
     </top>
 
     <center>
-        <TableView layoutX="125.0" layoutY="109.0" prefHeight="200.0" prefWidth="378.0">
+        <TableView fx:id="shopItems" layoutX="125.0" layoutY="109.0" prefHeight="200.0" prefWidth="378.0">
             <columns>
-                <TableColumn prefWidth="75.0" text="ID"/>
-                <TableColumn prefWidth="75.0" text="Name"/>
-                <TableColumn prefWidth="75.0" text="Count"/>
-                <TableColumn prefWidth="75.0" text="Type"/>
-                <TableColumn prefWidth="75.0" text="Model"/>
+                <TableColumn fx:id="shopItemsName" prefWidth="75.0" text="Name"/>
+                <TableColumn fx:id="shopItemsModel" prefWidth="75.0" text="Model"/>
+                <TableColumn fx:id="shopItemsCount" prefWidth="75.0" text="Count"/>
+                <TableColumn fx:id="shopItemsType" prefWidth="75.0" text="Type"/>
             </columns>
         </TableView>
     </center>

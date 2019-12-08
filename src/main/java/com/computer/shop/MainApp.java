@@ -16,7 +16,6 @@ public class MainApp extends Application {
     public static final String ADDRESS = "localhost";
     public static final String PORT = "8080";
 
-
     public static void main(String[] args) {
         launch(args);
     }
