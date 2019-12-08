@@ -1,6 +1,7 @@
 package com.computer.shop.controllers;
 
 import com.computer.shop.MainApp;
+import com.computer.shop.exceptions.ConnectionException;
 import com.computer.shop.helpers.ViewHelper;
 import com.computer.shop.http.HttpRequests;
 import com.computer.shop.models.Info;
@@ -52,7 +53,17 @@ public class ShopItemsController implements Initializable {
     }
 
     private ObservableList<Info> getListFromServer() {
-        final String response = http.get("api/info");
+        String response = null;
+        try {
+            response = http.get("api/info");
+        } catch (ConnectionException e) {
+            e.printStackTrace();
+        }
+
+        if(response == null) {
+            return FXCollections.emptyObservableList();
+        }
+
         Info[] infos = new Gson().fromJson(response, Info[].class);
         return FXCollections.observableArrayList(infos);
     }

@@ -1,5 +1,6 @@
 package com.computer.shop.http;
 
+import com.computer.shop.exceptions.ConnectionException;
 import javafx.scene.control.Alert;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -21,7 +22,7 @@ public class HttpRequests {
         baseAddress = buildBaseAddress(address, port);
     }
 
-    public String get(final String address) {
+    public String get(final String address) throws ConnectionException {
         String response;
 
         HttpClient httpClient = HttpClientBuilder.create().build();
@@ -32,7 +33,7 @@ public class HttpRequests {
             response = getResponse(httpClient.execute(httpGet));
         } catch (Exception e) {
             handleConnectionError();
-            throw new RuntimeException(e);
+            throw new ConnectionException("Could not reach server", e.getCause());
         }
 
         return response;
