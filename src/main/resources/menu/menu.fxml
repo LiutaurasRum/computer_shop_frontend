@@ -7,10 +7,10 @@
    <children>
       <Label layoutX="286.0" layoutY="32.0" text="Welcome!" />
       <Label layoutX="226.0" layoutY="66.0" text="To the computer shop aplication" />
-      <Button layoutX="63.0" layoutY="114.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="182.0" text="Preview the offered shop items" onAction="#loadShopItems"/>
+      <Button layoutX="63.0" layoutY="114.0" mnemonicParsing="false" onAction="#loadShopItems" prefHeight="41.0" prefWidth="182.0" text="Preview the offered shop items" />
       <Button layoutX="354.0" layoutY="114.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="182.0" text="Add new items to the shop" />
       <Button layoutX="63.0" layoutY="234.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="182.0" text="Order an item" />
       <Button layoutX="354.0" layoutY="234.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="182.0" text="Contacts" />
-      <Button layoutX="463.0" layoutY="20.0" mnemonicParsing="false" prefHeight="18.0" prefWidth="122.0" text="Exit the application" textAlignment="CENTER" textFill="#f50000" underline="true" />
+      <Button layoutX="522.0" layoutY="20.0" mnemonicParsing="false" text="Logout" />
    </children>
 </AnchorPane>

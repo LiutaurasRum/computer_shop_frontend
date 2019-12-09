@@ -10,6 +10,6 @@
       <TreeView layoutX="55.0" layoutY="136.0" prefHeight="200.0" prefWidth="200.0" />
       <Label layoutX="408.0" layoutY="106.0" text="Junior manager" />
       <TreeView layoutX="349.0" layoutY="136.0" prefHeight="200.0" prefWidth="200.0" />
-      <Button layoutX="241.0" layoutY="350.0" mnemonicParsing="false" text="Go back to main menu" />
+      <Button layoutX="29.0" layoutY="26.0" mnemonicParsing="false" text="Go back to main menu" />
    </children>
 </AnchorPane>

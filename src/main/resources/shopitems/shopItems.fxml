@@ -21,6 +21,6 @@
     </center>
 
     <bottom>
-        <Button text="Go back to main menu" BorderPane.alignment="CENTER_LEFT" onAction="#loadMenu"/>
+        <Button text="Go back to main menu" BorderPane.alignment="CENTER" onAction="#loadMenu"/>
     </bottom>
 </BorderPane>
