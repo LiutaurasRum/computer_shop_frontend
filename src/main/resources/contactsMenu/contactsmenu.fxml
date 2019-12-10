@@ -7,9 +7,9 @@
    <children>
       <Label layoutX="286.0" layoutY="30.0" text="Contacts" />
       <Label layoutX="131.0" layoutY="106.0" text="Manager" />
-      <TreeView layoutX="55.0" layoutY="136.0" prefHeight="200.0" prefWidth="200.0" />
       <Label layoutX="408.0" layoutY="106.0" text="Junior manager" />
-      <TreeView layoutX="349.0" layoutY="136.0" prefHeight="200.0" prefWidth="200.0" />
       <Button layoutX="231.0" layoutY="345.0" mnemonicParsing="false" onAction="#openMainMenu" text="Go back to main menu" />
+      <TextArea layoutX="55.0" layoutY="136.0" prefHeight="200.0" prefWidth="200.0" text="Liutauras Rumbavičius&#10;&#10;860000000&#10;&#10;J. Jasinskio g. 15, Vilnius 01111&#10;&#10;&#10;&#10;&#10;" />
+      <TextArea layoutX="349.0" layoutY="136.0" prefHeight="200.0" prefWidth="200.0" text="Petras Petrauskas&#10;&#10;861111111&#10;&#10;J. Jasinskio g. 15, Vilnius 01111&#10;&#10;&#10;&#10;&#10;" />
    </children>
 </AnchorPane>

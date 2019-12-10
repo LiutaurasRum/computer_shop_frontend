@@ -11,13 +11,12 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
-
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class LoginController implements Initializable {
     private static final String LOGIN_ENDPOINT = "login";
-    public static final Boolean DEBUG_MODE = true;
+    public static final Boolean DEBUG_MODE = false;
     @FXML
     private TextField loginTextField;
     @FXML
