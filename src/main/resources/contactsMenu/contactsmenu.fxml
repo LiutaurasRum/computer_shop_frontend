@@ -3,13 +3,13 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="menus.Contactsmenu">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.computer.shop.controllers.ContactsController">
    <children>
       <Label layoutX="286.0" layoutY="30.0" text="Contacts" />
       <Label layoutX="131.0" layoutY="106.0" text="Manager" />
       <TreeView layoutX="55.0" layoutY="136.0" prefHeight="200.0" prefWidth="200.0" />
       <Label layoutX="408.0" layoutY="106.0" text="Junior manager" />
       <TreeView layoutX="349.0" layoutY="136.0" prefHeight="200.0" prefWidth="200.0" />
-      <Button layoutX="29.0" layoutY="26.0" mnemonicParsing="false" text="Go back to main menu" />
+      <Button layoutX="231.0" layoutY="345.0" mnemonicParsing="false" onAction="#openMainMenu" text="Go back to main menu" />
    </children>
 </AnchorPane>

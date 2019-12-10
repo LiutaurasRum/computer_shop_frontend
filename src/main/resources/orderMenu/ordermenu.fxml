@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="menus.Ordermenu">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.computer.shop.controllers.OrderController">
    <children>
       <Label layoutX="266.0" layoutY="33.0" text="Ordering tab" />
       <Label layoutX="189.0" layoutY="136.0" text="Name" />
@@ -16,6 +16,6 @@
       <TextField layoutX="261.0" layoutY="258.0" />
       <Label layoutX="223.0" layoutY="69.0" prefHeight="50.0" prefWidth="170.0" text="*Please enter the information of the item to order it" wrapText="true" />
       <Button layoutX="282.0" layoutY="318.0" mnemonicParsing="false" text="Order now!" />
-      <Button layoutX="29.0" layoutY="29.0" mnemonicParsing="false" text="Go back to main menu" />
+      <Button layoutX="29.0" layoutY="29.0" mnemonicParsing="false" onAction="#openMainMenu" text="Go back to main menu" />
    </children>
 </AnchorPane>
